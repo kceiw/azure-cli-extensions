@@ -67,7 +67,7 @@ def generate_script(user_msg: str, history_msg: list):
 def transform_script_to_scenario(script):
     """Transform the generated script to a scenario"""
     # source 5 means it is from chatgpt service
-    scenario = {'scenario': script['Description'], 'nextCommandSet': script['CommandSet'], 'source': 5, 'type': RecommendType.Chatgpt,
-                'executeIndex': range(len(script['CommandSet'])), 'score': 1, 'reason': script['Reason'],
-                'description': script['Description']}
+    scenario = {'scenario': script['scenario'], 'nextCommandSet': script['commandSet'], 'source': 5, 'type': RecommendType.Chatgpt,
+                'executeIndex': range(len(script['commandSet'])), 'score': 1, 'reason': '',
+                'description': script['description']}
     return scenario
